@@ -3,5 +3,9 @@ gen_opentsdb is a gen_server which connects and is able to push (and soon be abl
 Example usage:
 
   gen_opentsdb:start_link().
-  gen_opentsdb:put_metric(<<"nhl.det">>,150.0). %% submits a metric "nhl.det" with a value of 150.0 and no tags.
-  gen_opentsdb:put_metric(<<"nhl.det">>,150.0,[{<<"user">>,<<"brad">>}]). %% submits the same metric as before, but with a proplist which will be composed into a tag key/value pair for opentsdb
+  
+  gen_opentsdb:put_metric(<<"nhl.det">>,150.0).
+  %% Submits a metric "nhl.det" with a value of 150.0 and no tags.
+  
+  gen_opentsdb:put_metric(<<"nhl.det">>,150.0,[{<<"user">>,<<"brad">>}])
+  %% Submits the same metric as before, but with a proplist which will be composed into a tag key/value pair for opentsdb.
